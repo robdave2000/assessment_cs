@@ -1,0 +1,10 @@
+arraySize                  doublerInsert                doublerAppend
+extraLargeArray            1.0653088sec                 3.771ms
+largerArray                10.6974ms                    755.1 μs
+mediumArray                232.8 μs                     187.2 μs
+smallArray                 65.4 μs                      130.7 μs
+tinyArray                  52.1 μs                      118.9 μs
+
+The size of the array seems to cause an exponential or logorithmic increase in the ammount of time need to insert or append the array. This is seen with how there is little difference between the small arrays but a large different between the larger arrays showing that they are non linear. The doubleAppend scales better because the smaller arrays are closer in time for longer.
+
+Insert took longer then Append because Append used push which add to the end of the array. Whereas Insert used unshift which add to the front of the array, but to do that a new array is made which has the new element at the beginning and then copies over the old array into their new possitions.
